@@ -42,3 +42,10 @@ six = Exists(f, And(l3 < f, l4 < f, f < u3, f < u4))
 formula = And(one, two, three, four, five, six)
 s.add(formula)
 print(s.check())
+
+#Problem 3
+(assert (forall) ((numx Int))
+        (forall) ((denomx Int))
+        (exists) ((numy Int))
+        (exists) ((denomy Int))
+            And(((/ numy denomy) > (/ (* 3 /(numx denomx)) 2)) ((/ numy denomy) < (+ (* 2 (/ numx denomx)) (/ 5 2)))))
