@@ -40,7 +40,7 @@ def f(i,j, ff, fb, bf, bb):
 
 fpart1 = ForAll(r, f(a, b, ff, fb, bf, bb) > f(r, b, ff, fb, bf, bb))
 fpart2 = ForAll(s, f(a, b, ff, fb, bf, bb) < f(a, s, ff, fb, bf, bb))
-formula = Exists(a, Exists(b, And(fpart1, fpart2)))
+formula = ForAll(ff, ForAll(fb, ForAll(bf, ForAll(bb, Exists(a, Exists(b, And(fpart1, fpart2))) ))))
 s.add(formula)
 print(s.check())
 
